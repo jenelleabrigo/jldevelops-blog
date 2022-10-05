@@ -41,9 +41,9 @@ export default function Layout({children, home}) {
   });
 
   return (
-    <div ref={target} className="h-full w-full py-10 px-4 bg-gradient realative">
+    <div ref={target} className="h-full w-full py-10 px-4 md:px-10 bg-gradient realative">
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo.png" />
         <meta name="description" content="" />
         <meta name="og:image" content={`https://og-image.vercel.app/${encodeURI(siteTitle)}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`} />
         <meta name="og:title" content={siteTitle} />
@@ -63,6 +63,11 @@ export default function Layout({children, home}) {
       </div>
       <div ref={clouds_4.ref} className="fixed opacity-50" style={{top: "15vh", right: "5vw"}}>
         <Image src={"/images/clouds.svg"} height={300} width={300} />
+      </div>
+
+      {/* PC LOGO */}
+      <div className="fixed hidden md:block top-4 left-4 z-10 md:opacity-70 opacity-90">
+        <Image priority src="/images/logo.png" height={80} width={80} alt="logo" />
       </div>
 
       {/* CONTENT */}
@@ -96,6 +101,10 @@ export default function Layout({children, home}) {
             </Link>
           </div>
         )}
+      </div>
+      {/* SP LOGO */}
+      <div className="flex items-center justify-center md:hidden z-10 mt-10 center md:opacity-70 opacity-90">
+        <Image priority src="/images/logo.png" height={80} width={80} alt="logo" />
       </div>
     </div>
   );
